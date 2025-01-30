@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Networking process</title>
+</head>
+<body>
+    <p id="response">Fetching...</p>
+
+    <script>
+        fetch('https://spenap.github.io/web-examples/README.md')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response').textContent = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('response').textContent = 'Error connecting to the server.';
+            });
+    </script>
+</body>
+</html>
